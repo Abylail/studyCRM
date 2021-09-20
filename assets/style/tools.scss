@@ -1,0 +1,43 @@
+
+// MARGIN
+.margin {
+
+  @for $distance from 0 through 200 {
+    &-#{$distance} {
+      margin: $distance + px;
+    }
+  }
+
+  &-top {
+    @for $distance from 0 through 200 {
+      &-#{$distance} {
+        margin-top: $distance + px;
+      }
+    }
+  }
+
+  &-bottom {
+    @for $distance from 0 through 200 {
+      &-#{$distance} {
+        margin-bottom: $distance + px;
+      }
+    }
+  }
+
+  &-left {
+    @for $distance from 0 through 200 {
+      &-#{$distance} {
+        margin-left: $distance + px;
+      }
+    }
+  }
+
+  &-bottom {
+    @for $distance from 0 through 200 {
+      &-#{$distance} {
+        margin-right: $distance + px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,33 @@
+.page {
+  padding: 20px 10px 100px;
+
+  &__title {
+    font-size: $fs_title;
+    font-weight: bolder;
+  }
+
+  &__sub-title {
+    font-size: $fs_sub-title;
+    font-weight: bolder;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    font-size: $fs_text;
+    color: $color_gray;
+    &--strong {
+      font-size: $fs_text;
+      color: $color_gray_dark;
+    }
+  }
+
+  &__block {
+    margin-top: 20px;
+  }
+
+}
