@@ -53,6 +53,15 @@ export const details = {
         name: "Робототехника",
       },
     ],
+    3: [
+      {
+        id: 9,
+        type_id: 0,
+        start: "13:00",
+        end: "14:30",
+        name: "Робототехника",
+      },
+    ],
     5: [
       {
         id: 6,
@@ -61,6 +70,13 @@ export const details = {
         end: "12:30",
         name: "Робототехника",
       },
+      {
+        id: 7,
+        type_id: 0,
+        start: "12:30",
+        end: "13:30",
+        name: "Робототехника"
+      }
     ],
   }
 }

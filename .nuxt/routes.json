@@ -2,66 +2,66 @@
   {
     "name": "settings",
     "path": "/settings",
-    "component": "/Users/abylay/Desktop/studyCRM/pages/settings/index.vue",
+    "component": "C:\\\\Users\\\\ABazarbayev\\\\Desktop\\\\studyCRM\\\\pages\\\\settings\\\\index.vue",
     "chunkName": "pages/settings/index",
-    "_name": "_16c59b2d"
+    "_name": "_9482f1e2"
   },
   {
     "name": "timetable",
     "path": "/timetable",
-    "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/index.vue",
+    "component": "C:\\\\Users\\\\ABazarbayev\\\\Desktop\\\\studyCRM\\\\pages\\\\timetable\\\\index.vue",
     "chunkName": "pages/timetable/index",
-    "_name": "_b9c47da6"
+    "_name": "_238807fe"
   },
   {
     "name": "timetable-children",
     "path": "/timetable/children",
-    "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/children/index.vue",
+    "component": "C:\\\\Users\\\\ABazarbayev\\\\Desktop\\\\studyCRM\\\\pages\\\\timetable\\\\children\\\\index.vue",
     "chunkName": "pages/timetable/children/index",
-    "_name": "_ba394212"
+    "_name": "_1ccf673c"
   },
   {
     "name": "timetable-classrooms",
     "path": "/timetable/classrooms",
-    "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/classrooms/index.vue",
+    "component": "C:\\\\Users\\\\ABazarbayev\\\\Desktop\\\\studyCRM\\\\pages\\\\timetable\\\\classrooms\\\\index.vue",
     "chunkName": "pages/timetable/classrooms/index",
-    "_name": "_0efcfcf8"
+    "_name": "_2f494981"
   },
   {
     "name": "timetable-desc",
     "path": "/timetable/desc",
-    "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/desc/index.vue",
+    "component": "C:\\\\Users\\\\ABazarbayev\\\\Desktop\\\\studyCRM\\\\pages\\\\timetable\\\\desc\\\\index.vue",
     "chunkName": "pages/timetable/desc/index",
-    "_name": "_a00270ee"
+    "_name": "_3dc7ffe0"
   },
   {
     "name": "timetable-groupsAndLessons",
     "path": "/timetable/groupsAndLessons",
-    "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/groupsAndLessons/index.vue",
+    "component": "C:\\\\Users\\\\ABazarbayev\\\\Desktop\\\\studyCRM\\\\pages\\\\timetable\\\\groupsAndLessons\\\\index.vue",
     "chunkName": "pages/timetable/groupsAndLessons/index",
-    "_name": "_4a819e10"
+    "_name": "_e5c6472e"
   },
   {
     "name": "timetable-teachers",
     "path": "/timetable/teachers",
-    "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/teachers/index.vue",
+    "component": "C:\\\\Users\\\\ABazarbayev\\\\Desktop\\\\studyCRM\\\\pages\\\\timetable\\\\teachers\\\\index.vue",
     "chunkName": "pages/timetable/teachers/index",
     "children": [
       {
         "name": "timetable-teachers-index-id",
         "path": ":id?",
-        "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/teachers/index/_id.vue",
+        "component": "C:\\\\Users\\\\ABazarbayev\\\\Desktop\\\\studyCRM\\\\pages\\\\timetable\\\\teachers\\\\index\\\\_id.vue",
         "chunkName": "pages/timetable/teachers/index/_id",
-        "_name": "_727f5718"
+        "_name": "_30931f1a"
       }
     ],
-    "_name": "_409cd349"
+    "_name": "_0b0d6250"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/abylay/Desktop/studyCRM/pages/index.vue",
+    "component": "C:\\\\Users\\\\ABazarbayev\\\\Desktop\\\\studyCRM\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_88312c4a"
+    "_name": "_8d2a56dc"
   }
 ]

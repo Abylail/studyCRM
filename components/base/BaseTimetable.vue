@@ -1,17 +1,21 @@
 <template>
-  <table class="base-timetable" border="1">
+  <table class="base-timetable">
 
     <!--  HEADS  -->
     <tr>
-      <th></th>
-      <th v-for="head in heads" :key="head">{{ head }}</th>
+      <th class="base-timetable__time base-timetable__head">Время</th>
+      <th class="base-timetable__head" v-for="head in heads" :key="head.id">{{ head.name }}</th>
     </tr>
 
     <!--  MAIN INFO  -->
-    <tr v-for="time in times" :key="time">
-      <td>{{ time }}</td>
-      <td v-for="head in heads" :key="head">
-        check
+    <tr v-for="(time, index) in times" :key="index">
+      <td class="base-timetable__time" >{{ time.start }} - {{ time.end }}</td>
+
+      <td class="base-timetable__cell" v-for="head in heads" :key="head.id">
+        <CardTimetable
+            :data="findLesson(head.id, time)"
+            :time="time"
+        />
       </td>
     </tr>
 
@@ -22,22 +26,39 @@
 import mainTimetable from "@/config/examples/mainTimetable";
 import weekDays from "@/config/weekDays";
 
+import CardTimetable from "@/components/common/timetable/CardTimetable";
+
 export default {
   name: "BaseTimetable",
+  components: { CardTimetable },
+  props: {
+    data: {
+      type: Object,
+      default: () => mainTimetable
+    }
+  },
   data: () => ({
-    dayStart: "9:00",
-    dayEnd: "20:00",
-
     HIGHEST_TIME_DEFAULT: "9:00",
     LOWEST_TIME_DEFAULT: "22:00",
   }),
   methods: {
-    calculateMinutes(time, val = -30) {
+    isTimeIncludes(time, lesson) {
+      return this.formatTimeToMinutes(time.start) >= this.formatTimeToMinutes(lesson.start)
+          && this.formatTimeToMinutes(time.end) <= this.formatTimeToMinutes(lesson.end)
+    },
+    findLesson(dayId, time) {
+      const dayLessons = this.data[dayId];
+      return dayLessons.find(lesson => this.isTimeIncludes(time, lesson))
+    },
 
+    calculateMinutes(time, val = -30) {
+      const [hours, minutes] = time.split(":").map(t => parseInt(t));
+      const timeInMinutes = (hours*60 + minutes) + val;
+      return this.minutesToTime(timeInMinutes);
     },
     minutesToTime(val) {
       const minutes = val % 60;
-      const hours = val/60;
+      const hours = (val - minutes)/60;
       return this.timeToFormat(`${hours}:${minutes}`);
     },
     timeToFormat(time) {
@@ -48,6 +69,10 @@ export default {
       const processedMinute = minute.length > 1 ? minute : `0${minute}`;
 
       return `${processedHour}:${processedMinute}`
+    },
+    formatTimeToMinutes(time) {
+      let [hours, minutes] = time.split(":").map(t => parseInt(t));
+      return hours*60 + minutes;
     },
     timeToMinutes(hour, minute) {
       return ( hour * 60 ) + minute;
@@ -93,7 +118,10 @@ export default {
       return lowestTime;
     },
     heads() {
-      return Object.keys(this.data).map(key => weekDays[key]?.name || "empty");
+      return Object.keys(this.data).map(key => ({
+        name: weekDays[key].name,
+        id: key
+      }));
     },
     times() {
       let [startHour, startMinute] = this.highestTime.split(":").map(time => parseInt(time));
@@ -102,8 +130,13 @@ export default {
 
       while(this.timeToMinutes(startHour, startMinute) <= (this.timeToMinutes(endHour, endMinute) - 30)) {
         const edgeStart = this.timeToFormat(`${startHour}:${startMinute}`);
-        // const edgeEnd = this.timeToFormat(`${startHour}:${startMinute}`);
-        times.push(edgeStart);
+        const edgeEnd = this.calculateMinutes(`${startHour}:${startMinute}`, +30);
+        times.push(
+            {
+              start: edgeStart,
+              end: edgeEnd
+            }
+        );
 
         if (!!startMinute) {
           startHour++;
@@ -117,17 +150,45 @@ export default {
       return times;
     }
   },
-  props: {
-    data: {
-      type: Object,
-      default: () => mainTimetable
-    }
-  }
 }
 </script>
 
 <style lang="scss" scoped>
+$cell_height: 40px;
+$cell_border_color: black;
+
 .base-timetable {
   width: 100%;
+  border-spacing: 0;
+  border: 1px solid $cell_border_color;
+
+  &__cell {
+    padding: 0;
+    height: $cell_height;
+    text-align: center;
+    border-right: 1px solid $cell_border_color;
+    &:last-child { border-right: none }
+  }
+
+  &__head {
+    height: $cell_height;
+    text-align: center;
+    border-right: 1px solid $cell_border_color;
+    border-bottom: 1px solid $cell_border_color;
+    &:last-child { border-right: none }
+  }
+
+  &__time {
+    border-right: 1px solid $cell_border_color;
+    border-bottom: 1px solid $cell_border_color;
+    text-align: center;
+    width: 1%;
+    white-space: nowrap;
+    padding: 0 6px;
+  }
+
+  tr:last-child .base-timetable__time{
+    border-bottom: none;
+  }
 }
 </style>

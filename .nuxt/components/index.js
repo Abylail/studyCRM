@@ -1,7 +1,7 @@
-export { default as BaseButton } from '../../components/base/BaseButton.vue'
-export { default as BaseDevider } from '../../components/base/BaseDevider.vue'
-export { default as BaseTextField } from '../../components/base/BaseTextField.vue'
-export { default as BaseTimetable } from '../../components/base/BaseTimetable.vue'
+export { default as BaseButton } from '../..\\components\\base\\BaseButton.vue'
+export { default as BaseDevider } from '../..\\components\\base\\BaseDevider.vue'
+export { default as BaseTextField } from '../..\\components\\base\\BaseTextField.vue'
+export { default as BaseTimetable } from '../..\\components\\base\\BaseTimetable.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {
