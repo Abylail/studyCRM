@@ -3,7 +3,7 @@
     <!--  HEAD  -->
     <div class="page__head">
       <p class="page__title">{{ details.name }}</p>
-      <BaseButton>Создать урок +</BaseButton>
+      <BaseButton @click="createHandle">Создать урок +</BaseButton>
     </div>
 
     <div class="page__block">
@@ -24,6 +24,11 @@ export default {
   data: () => ({
     details,
   }),
+  methods: {
+    createHandle() {
+      console.log("create")
+    }
+  },
   computed: {
     id() {
       return this.$route.params.id;
