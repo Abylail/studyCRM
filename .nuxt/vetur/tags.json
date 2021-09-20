@@ -1,0 +1,14 @@
+{
+  "BaseButton": {
+    "description": "Auto imported from components/base/BaseButton.vue"
+  },
+  "BaseDevider": {
+    "description": "Auto imported from components/base/BaseDevider.vue"
+  },
+  "BaseTextField": {
+    "description": "Auto imported from components/base/BaseTextField.vue"
+  },
+  "BaseTimetable": {
+    "description": "Auto imported from components/base/BaseTimetable.vue"
+  }
+}

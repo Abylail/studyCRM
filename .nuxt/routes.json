@@ -1,0 +1,67 @@
+[
+  {
+    "name": "settings",
+    "path": "/settings",
+    "component": "/Users/abylay/Desktop/studyCRM/pages/settings/index.vue",
+    "chunkName": "pages/settings/index",
+    "_name": "_16c59b2d"
+  },
+  {
+    "name": "timetable",
+    "path": "/timetable",
+    "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/index.vue",
+    "chunkName": "pages/timetable/index",
+    "_name": "_b9c47da6"
+  },
+  {
+    "name": "timetable-children",
+    "path": "/timetable/children",
+    "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/children/index.vue",
+    "chunkName": "pages/timetable/children/index",
+    "_name": "_ba394212"
+  },
+  {
+    "name": "timetable-classrooms",
+    "path": "/timetable/classrooms",
+    "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/classrooms/index.vue",
+    "chunkName": "pages/timetable/classrooms/index",
+    "_name": "_0efcfcf8"
+  },
+  {
+    "name": "timetable-desc",
+    "path": "/timetable/desc",
+    "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/desc/index.vue",
+    "chunkName": "pages/timetable/desc/index",
+    "_name": "_a00270ee"
+  },
+  {
+    "name": "timetable-groupsAndLessons",
+    "path": "/timetable/groupsAndLessons",
+    "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/groupsAndLessons/index.vue",
+    "chunkName": "pages/timetable/groupsAndLessons/index",
+    "_name": "_4a819e10"
+  },
+  {
+    "name": "timetable-teachers",
+    "path": "/timetable/teachers",
+    "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/teachers/index.vue",
+    "chunkName": "pages/timetable/teachers/index",
+    "children": [
+      {
+        "name": "timetable-teachers-index-id",
+        "path": ":id?",
+        "component": "/Users/abylay/Desktop/studyCRM/pages/timetable/teachers/index/_id.vue",
+        "chunkName": "pages/timetable/teachers/index/_id",
+        "_name": "_727f5718"
+      }
+    ],
+    "_name": "_409cd349"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/abylay/Desktop/studyCRM/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_88312c4a"
+  }
+]
