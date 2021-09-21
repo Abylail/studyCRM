@@ -1,6 +1,10 @@
 <template>
   <div class="base-text-field">
 
+    <div class="base-text-field__title" v-if="!!title">
+      {{ title }}
+    </div>
+
     <input
       class="base-text-field__input"
       :type="type"
@@ -16,13 +20,17 @@
 export default {
   name: "BaseTextField",
   props: {
+    title: {
+      type: String,
+      default: ""
+    },
     type: {
       type: String,
       default: "text"
     },
     value: {
       type: String,
-      require: true
+      required: true
     },
     placeholder: {
       type: String,
@@ -40,6 +48,11 @@ export default {
 <style lang="scss" scoped>
 .base-text-field {
   display: block;
+
+  &__title {
+    font-size: $fs_sub-title;
+    margin-bottom: 2px;
+  }
 
   &__input {
     height: 26px;

@@ -5,6 +5,15 @@
   "BaseDevider": {
     "description": "Auto imported from components/base/BaseDevider.vue"
   },
+  "BaseIcon": {
+    "description": "Auto imported from components/base/BaseIcon.vue"
+  },
+  "BaseModal": {
+    "description": "Auto imported from components/base/BaseModal.vue"
+  },
+  "BaseSelect": {
+    "description": "Auto imported from components/base/BaseSelect.vue"
+  },
   "BaseTextField": {
     "description": "Auto imported from components/base/BaseTextField.vue"
   },

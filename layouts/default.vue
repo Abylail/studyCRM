@@ -7,15 +7,27 @@
     </div>
 
     <Sidebar class="default-layout__sidebar" />
+
+
+    <!--  MODALS  -->
+
+    <CreateLessonModal/>
   </div>
 </template>
 
 <script>
 import Header from "@/components/common/header/Header";
 import Sidebar from "@/components/common/sidebar/Sidebar";
+
+import CreateLessonModal from "@/components/common/modals/CreateLessonModal";
+
 export default {
   name: "default",
-  components: {Sidebar, Header }
+  components: {
+    Sidebar,
+    Header,
+    CreateLessonModal
+  }
 }
 </script>
 

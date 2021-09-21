@@ -4,15 +4,16 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _16c59b2d = () => interopDefault(import('../pages/settings/index.vue' /* webpackChunkName: "pages/settings/index" */))
-const _b9c47da6 = () => interopDefault(import('../pages/timetable/index.vue' /* webpackChunkName: "pages/timetable/index" */))
-const _ba394212 = () => interopDefault(import('../pages/timetable/children/index.vue' /* webpackChunkName: "pages/timetable/children/index" */))
-const _0efcfcf8 = () => interopDefault(import('../pages/timetable/classrooms/index.vue' /* webpackChunkName: "pages/timetable/classrooms/index" */))
-const _a00270ee = () => interopDefault(import('../pages/timetable/desc/index.vue' /* webpackChunkName: "pages/timetable/desc/index" */))
-const _4a819e10 = () => interopDefault(import('../pages/timetable/groupsAndLessons/index.vue' /* webpackChunkName: "pages/timetable/groupsAndLessons/index" */))
-const _409cd349 = () => interopDefault(import('../pages/timetable/teachers/index.vue' /* webpackChunkName: "pages/timetable/teachers/index" */))
-const _727f5718 = () => interopDefault(import('../pages/timetable/teachers/index/_id.vue' /* webpackChunkName: "pages/timetable/teachers/index/_id" */))
-const _88312c4a = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _9482f1e2 = () => interopDefault(import('..\\pages\\settings\\index.vue' /* webpackChunkName: "pages/settings/index" */))
+const _238807fe = () => interopDefault(import('..\\pages\\timetable\\index.vue' /* webpackChunkName: "pages/timetable/index" */))
+const _1ccf673c = () => interopDefault(import('..\\pages\\timetable\\children\\index.vue' /* webpackChunkName: "pages/timetable/children/index" */))
+const _2f494981 = () => interopDefault(import('..\\pages\\timetable\\classrooms\\index.vue' /* webpackChunkName: "pages/timetable/classrooms/index" */))
+const _3dc7ffe0 = () => interopDefault(import('..\\pages\\timetable\\desc\\index.vue' /* webpackChunkName: "pages/timetable/desc/index" */))
+const _4932d32d = () => interopDefault(import('..\\pages\\timetable\\groups\\index.vue' /* webpackChunkName: "pages/timetable/groups/index" */))
+const _04d4ea18 = () => interopDefault(import('..\\pages\\timetable\\lessons\\index.vue' /* webpackChunkName: "pages/timetable/lessons/index" */))
+const _0b0d6250 = () => interopDefault(import('..\\pages\\timetable\\teachers\\index.vue' /* webpackChunkName: "pages/timetable/teachers/index" */))
+const _30931f1a = () => interopDefault(import('..\\pages\\timetable\\teachers\\index\\_id.vue' /* webpackChunkName: "pages/timetable/teachers/index/_id" */))
+const _8d2a56dc = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -27,40 +28,44 @@ export const routerOptions = {
 
   routes: [{
     path: "/settings",
-    component: _16c59b2d,
+    component: _9482f1e2,
     name: "settings"
   }, {
     path: "/timetable",
-    component: _b9c47da6,
+    component: _238807fe,
     name: "timetable"
   }, {
     path: "/timetable/children",
-    component: _ba394212,
+    component: _1ccf673c,
     name: "timetable-children"
   }, {
     path: "/timetable/classrooms",
-    component: _0efcfcf8,
+    component: _2f494981,
     name: "timetable-classrooms"
   }, {
     path: "/timetable/desc",
-    component: _a00270ee,
+    component: _3dc7ffe0,
     name: "timetable-desc"
   }, {
-    path: "/timetable/groupsAndLessons",
-    component: _4a819e10,
-    name: "timetable-groupsAndLessons"
+    path: "/timetable/groups",
+    component: _4932d32d,
+    name: "timetable-groups"
+  }, {
+    path: "/timetable/lessons",
+    component: _04d4ea18,
+    name: "timetable-lessons"
   }, {
     path: "/timetable/teachers",
-    component: _409cd349,
+    component: _0b0d6250,
     name: "timetable-teachers",
     children: [{
       path: ":id?",
-      component: _727f5718,
+      component: _30931f1a,
       name: "timetable-teachers-index-id"
     }]
   }, {
     path: "/",
-    component: _88312c4a,
+    component: _8d2a56dc,
     name: "index"
   }],
 

@@ -14,7 +14,7 @@ export default {
       validator(value) {
         return [
           "default",
-          "goBack",
+          "cancel"
         ].includes(value);
       }
     }
@@ -26,22 +26,31 @@ export default {
 .base-button {
   cursor: pointer;
   outline: none;
+  border: 2px solid transparent;
   transition: $transition_fast;
+  font-size: $fs_content;
+  border-radius: $border_radius;
+  padding: 5px 10px;
 
   &__default {
-    font-size: $fs_content;
     background: $color_primary;
     color: $color_secondary;
-    border-radius: $border_radius;
-    border: none;
-    padding: 5px 10px;
-    &:hover { opacity: .8 }
+    &:hover { opacity: .9 }
     &:active { opacity: .6 }
   }
 
-  &__goBack {
-
+  &__cancel {
+    border-color: $color_primary;
+    background: transparent;
+    color: $color_primary;
+    &:hover {
+      background: $color_primary;
+      color: $color_secondary;
+      opacity: .9;
+    }
+    &:active { opacity: .6 }
   }
+
 
 }
 </style>

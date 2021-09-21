@@ -1,14 +1,14 @@
 <template>
-  <div class="groupsAndLessons page">
+  <div class="page lessons">
     <div class="page__head">
-      <p class="page__title">Группы и уроки</p>
+      <p class="page__title">Уроки</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  name: "index"
 }
 </script>
 
