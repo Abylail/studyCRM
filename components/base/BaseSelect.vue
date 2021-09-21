@@ -167,14 +167,14 @@ $padding_edge: 5px 8px;
   }
 
   &__options {
-    max-height: 300px;
+    max-height: 200px;
     margin-top: 5px;
     border-radius: $border_radius-mini;
     width: inherit;
     position: absolute;
     z-index: 10;
     background: white;
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
     overflow: auto;
   }
 

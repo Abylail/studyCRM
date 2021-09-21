@@ -87,7 +87,7 @@ export default {
   }
 
   &__text {
-    font-size: $fs_content;
+    font-size: $fs_text;
   }
 
   tr:not(:last-child) &__empty {
