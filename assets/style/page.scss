@@ -30,4 +30,30 @@
     margin-top: 20px;
   }
 
+  &__list {
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__edge {
+    background: $color_gray_light;
+    color: $color_gray;
+    font-size: $fs_content;
+    padding: 4px 8px;
+    margin: 3px 6px 3px 0;
+    transition: $transition_fast;
+
+    &.active {
+      //background: $color_gray;
+      //color: $color_gray_light;
+      background: $color_primary;
+      color: $color_secondary_extra;
+    }
+
+    &:hover {
+      opacity: $opacity_low;
+    }
+  }
+
 }

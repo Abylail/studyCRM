@@ -76,6 +76,8 @@
 </template>
 
 <script>
+import { required } from "vuelidate/lib/validators";
+
 import { teachers, lesson_types, classrooms } from "@/config/examples/lists";
 import weekDays from "@/config/weekDays";
 
@@ -113,7 +115,7 @@ export default {
       this.day = null;
       this.timeStart = null;
       this.timeEnd = null;
-    }
+    },
   },
   computed: {
     timeError() {
@@ -133,6 +135,9 @@ export default {
         ...weekDays[dayId]
       }))
     }
+  },
+  validations: {
+    selectedTeacher: { required },
   }
 }
 </script>

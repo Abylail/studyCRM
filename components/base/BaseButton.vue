@@ -1,5 +1,5 @@
 <template>
-  <button class="base-button" :class="`base-button__${variant}`" @click="$emit('click')">
+  <button class="unselect base-button" :class="`base-button__${variant}`" @click="$emit('click')">
     <slot/>
   </button>
 </template>

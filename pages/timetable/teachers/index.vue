@@ -15,9 +15,9 @@
       <p class="page__text">Список учителей, что бы посмотреть детали нажмите на имя учителя</p>
 
       <!--  teachers list  -->
-      <div class="teachers__list">
+      <div class="page__list">
         <nuxt-link
-          class="teachers__edge"
+          class="page__edge"
           :class="{active: teacher.id.toString() === teacherId}"
           v-for="teacher in teachers" :key="teacher.id"
           :to="`/timetable/teachers/${teacher.id}`"
@@ -25,7 +25,7 @@
         <p class="page__text--strong" v-if="!teachers.length" >Учителей с таким именем нет</p>
       </div>
 
-      <div class="teacher__details" v-if="teacherId">
+      <div class="page__details" v-if="teacherId">
         <BaseDevider/>
         <nuxt-child/>
       </div>

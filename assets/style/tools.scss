@@ -7,6 +7,49 @@
   user-select: none; /* Standard */
 }
 
+// CURSOR POINTER
+.pointer {
+  cursor: pointer;
+}
+
+// FLEX
+.flex {
+  &-row {
+    display: flex;
+    flex-direction: row;
+  }
+  &-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// TRANSITION
+.transition {
+  transition: $transition;
+}
+
+// ROTATE
+.rotate {
+  @for $value from 0 through 360 {
+    &-#{$value} {
+      transform: rotate($value + deg);
+    }
+  }
+}
+
+// MIN VALUES
+.min {
+  &-height {
+    @for $value from 0 through 100 {
+      &-#{$value} {
+        min-height: $value + px;
+      }
+    }
+  }
+}
+
 // MARGIN
 .margin {
 
