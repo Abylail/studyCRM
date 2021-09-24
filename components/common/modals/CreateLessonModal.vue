@@ -67,8 +67,8 @@
       </div>
 
       <div class="create-lesson__buttons">
-        <BaseButton variant="cancel">Отменить</BaseButton>
-        <BaseButton>Сохранить</BaseButton>
+        <BaseButton variant="cancel" @click="cancel">Отменить</BaseButton>
+        <BaseButton @click="send">Сохранить</BaseButton>
       </div>
 
     </div>
@@ -116,6 +116,14 @@ export default {
       this.timeStart = null;
       this.timeEnd = null;
     },
+
+    send() {
+      this.$toast.success("Урок создан");
+      this.$modal.hide("create-lesson");
+    },
+    cancel() {
+      this.$modal.hide("create-lesson");
+    }
   },
   computed: {
     timeError() {

@@ -9,6 +9,7 @@ const _238807fe = () => interopDefault(import('..\\pages\\timetable\\index.vue' 
 const _1ccf673c = () => interopDefault(import('..\\pages\\timetable\\children\\index.vue' /* webpackChunkName: "pages/timetable/children/index" */))
 const _3d01b048 = () => interopDefault(import('..\\pages\\timetable\\children\\index\\_id.vue' /* webpackChunkName: "pages/timetable/children/index/_id" */))
 const _2f494981 = () => interopDefault(import('..\\pages\\timetable\\classrooms\\index.vue' /* webpackChunkName: "pages/timetable/classrooms/index" */))
+const _0765e2ee = () => interopDefault(import('..\\pages\\timetable\\classrooms\\index\\_id.vue' /* webpackChunkName: "pages/timetable/classrooms/index/_id" */))
 const _3dc7ffe0 = () => interopDefault(import('..\\pages\\timetable\\desc\\index.vue' /* webpackChunkName: "pages/timetable/desc/index" */))
 const _4932d32d = () => interopDefault(import('..\\pages\\timetable\\groups\\index.vue' /* webpackChunkName: "pages/timetable/groups/index" */))
 const _cd1a9f46 = () => interopDefault(import('..\\pages\\timetable\\groups\\index\\_id.vue' /* webpackChunkName: "pages/timetable/groups/index/_id" */))
@@ -48,7 +49,12 @@ export const routerOptions = {
   }, {
     path: "/timetable/classrooms",
     component: _2f494981,
-    name: "timetable-classrooms"
+    name: "timetable-classrooms",
+    children: [{
+      path: ":id?",
+      component: _0765e2ee,
+      name: "timetable-classrooms-index-id"
+    }]
   }, {
     path: "/timetable/desc",
     component: _3dc7ffe0,

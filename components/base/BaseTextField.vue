@@ -13,6 +13,9 @@
       @input="inputHandle"
     />
 
+    <span class="base-text-field__clearable" v-show="value && clearable" @click="clear">
+      <BaseIcon class="ic-16">close</BaseIcon>
+    </span>
   </div>
 </template>
 
@@ -35,11 +38,18 @@ export default {
     placeholder: {
       type: String,
       default: ""
+    },
+    clearable: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
     inputHandle(event) {
       this.$emit("input", event.target.value)
+    },
+    clear() {
+      this.$emit("input", "")
     }
   }
 }
@@ -47,6 +57,7 @@ export default {
 
 <style lang="scss" scoped>
 .base-text-field {
+  position: relative;
   display: block;
 
   &__title {
@@ -59,6 +70,14 @@ export default {
     width: -webkit-fill-available;
     padding: 0 5px;
     font-size: $fs_text;
+    background: white;
+  }
+
+  &__clearable {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
   }
 
 }

@@ -2,31 +2,29 @@
   <div class="groups page">
     <!-- HEAD -->
     <div class="page__head">
-      <p class="page__title">Группы</p>
+      <p class="page__title unselect">Группы</p>
+      <BaseButton>Добавить +</BaseButton>
     </div>
 
 
     <!-- SEARCH BY NAME -->
     <div class="page__block">
-      <p class="page__sub-title">Поиск по названию</p>
-      <BaseTextField class="margin-top-5" v-model="searchName" placeholder="Поиск по имени" />
+      <p class="page__sub-title unselect">Поиск по названию</p>
+      <BaseTextField class="margin-top-5" v-model="searchName" placeholder="Поиск по имени" clearable />
     </div>
 
 
     <!-- FILTER -->
-    <div class="page__head page__block pointer min-height-35" @click.self="toggleFilter">
-      <p class="page__sub-title">
+    <div class="groups__filter">
+    <div class="page__head pointer min-height-35" @click="toggleFilter">
+      <p class="page__sub-title unselect">
         Фильтр
-        <BaseIcon class="margin-left-10 ic-16 transition rotate-90"
+        <BaseIcon class="ic-16 transition rotate-90"
                   :class="{'rotate-270': showFilter}"
         >arrow</BaseIcon>
       </p>
       <span/>
-      <BaseButton v-show="haveFilters" @click="clearFilter">Сбросить</BaseButton>
-    </div>
-
-    <div class="">
-
+      <BaseButton v-show="haveFilters" @click.stop="clearFilter">Сбросить</BaseButton>
     </div>
 
     <Slide>
@@ -72,6 +70,7 @@
 
       </div>
     </Slide>
+    </div>
 
     <!-- LIST -->
     <div class="page__list">
@@ -81,6 +80,7 @@
         :active="isActive(group)"
         @click="goGroup"
       />
+      <p class="not-found margin-top-10" v-show="!groups.length">Групп не найдено</p>
     </div>
 
   </div>
@@ -129,38 +129,39 @@ export default {
       this.$router.push(`/timetable/groups/${group.id}`)
     },
 
-    byName(array) {
-      return array.filter(group => group.name.toLowerCase().includes(this.searchName.toLowerCase()));
+    byName(group) {
+      if (!this.searchName) return true;
+      return group.name.toLowerCase().includes(this.searchName.toLowerCase())
     },
-    byTimeStart(array) {
-      return array.filter(group => {
-        let include = false;
-        group.time.forEach(t => {
-          if (formatTimeToMinutes(t.start) >= formatTimeToMinutes(this.timeStart.start)) {
-            include = true;
-            return true;
-          }
-        })
-        return include;
-      });
+    byTimeStart(group) {
+      if (!this.timeStart) return true;
+      let include = false;
+      group.time.forEach(t => {
+      if (formatTimeToMinutes(t.start) >= formatTimeToMinutes(this.timeStart.start)) {
+          include = true;
+          return true;
+        }
+      })
+      return include;
     },
-    byTimeEnd(array) {
-      return array.filter(group => {
-        let include = false;
-        group.time.forEach(t => {
-          if (formatTimeToMinutes(t.end) <= formatTimeToMinutes(this.timeEnd.end)) {
-            include = true;
-            return true;
-          }
-        })
-        return include;
-      });
+    byTimeEnd(group) {
+      if (!this.timeEnd) return true;
+      let include = false;
+      group.time.forEach(t => {
+        if (formatTimeToMinutes(t.end) <= formatTimeToMinutes(this.timeEnd.end)) {
+          include = true;
+          return true;
+        }
+      })
+      return include;
     },
-    byTeacher(array) {
-      return array.filter(group => group.teacher.id.toString() === this.teacher.id.toString())
+    byTeacher(group) {
+      if (!this.teacher) return true;
+      return group.teacher.id.toString() === this.teacher.id.toString()
     },
-    byClassroom(array) {
-      return array.filter(group => group.classroom.id.toString() === this.classroom.id.toString())
+    byClassroom(group) {
+      if (!this.classroom) return true;
+      return group.classroom.id.toString() === this.classroom.id.toString();
     },
   },
   computed: {
@@ -177,20 +178,39 @@ export default {
     groupId() {
       return this.$route.params.id;
     },
+    // groups() {
+    //   let filteredList = list.slice();
+    //
+    //   if (this.searchName) filteredList = this.byName(filteredList);
+    //   if (this.timeStart) filteredList = this.byTimeStart(filteredList);
+    //   if (this.timeEnd) filteredList = this.byTimeEnd(filteredList);
+    //   if (this.teacher) filteredList = this.byTeacher(filteredList);
+    //   if (this.classroom) filteredList = this.byClassroom(filteredList);
+    //
+    //   return filteredList;
+    // },
     groups() {
-      let filteredList = list.slice();
-
-      if (this.searchName) filteredList = this.byName(filteredList);
-      if (this.timeStart) filteredList = this.byTimeStart(filteredList);
-      if (this.timeEnd) filteredList = this.byTimeEnd(filteredList);
-      if (this.teacher) filteredList = this.byTeacher(filteredList);
-      if (this.classroom) filteredList = this.byClassroom(filteredList);
-
-      return filteredList;
+      return list.filter(group => (
+          this.byName(group) &&
+          this.byTimeStart(group) &&
+          this.byTimeEnd(group) &&
+          this.byTeacher(group) &&
+          this.byClassroom(group)
+      ))
     }
   },
   components: { Slide, GroupCard }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.groups {
+
+  &__filter {
+    margin-top: 15px;
+    padding: 10px;
+    background: $color_gray_light;
+    border-radius: $border_radius;
+  }
+}
+</style>

@@ -12,6 +12,12 @@
   cursor: pointer;
 }
 
+// NOT FOUND
+.not-found {
+  color: $color_gray;
+  font-size: $fs_sub-title;
+}
+
 // FLEX
 .flex {
   &-row {

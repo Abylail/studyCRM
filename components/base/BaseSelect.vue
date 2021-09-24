@@ -140,6 +140,7 @@ $padding_edge: 5px 8px;
     display: grid;
     grid-template-columns: 1fr 25px;
     grid-template-areas: "text arrow";
+    background: white;
   }
 
   &__selected {

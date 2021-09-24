@@ -34,6 +34,15 @@
     "path": "/timetable/classrooms",
     "component": "C:\\\\Users\\\\ABazarbayev\\\\Desktop\\\\studyCRM\\\\pages\\\\timetable\\\\classrooms\\\\index.vue",
     "chunkName": "pages/timetable/classrooms/index",
+    "children": [
+      {
+        "name": "timetable-classrooms-index-id",
+        "path": ":id?",
+        "component": "C:\\\\Users\\\\ABazarbayev\\\\Desktop\\\\studyCRM\\\\pages\\\\timetable\\\\classrooms\\\\index\\\\_id.vue",
+        "chunkName": "pages/timetable/classrooms/index/_id",
+        "_name": "_0765e2ee"
+      }
+    ],
     "_name": "_2f494981"
   },
   {
