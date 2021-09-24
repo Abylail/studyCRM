@@ -35,6 +35,7 @@ export default {
   methods: {
     handleClick() {
       console.log(this.data)
+      this.$router.push(`/timetable/groups/${this.data.id}`)
     },
     timeToMinutes(time) {
       const [hours, minutes] = time.split(":").map(t => parseInt(t));

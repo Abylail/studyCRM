@@ -3,7 +3,7 @@
     <!--  HEAD  -->
     <div class="page__head">
       <p class="page__title">Учителя</p>
-      <span>sa</span>
+      <BaseButton>Добавить +</BaseButton>
     </div>
 
     <div class="page__block">

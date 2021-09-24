@@ -3,7 +3,7 @@
     <!--  HEAD  -->
     <div class="page__head">
       <p class="page__title">Дети</p>
-      <span>sa</span>
+      <BaseButton>Добавить +</BaseButton>
     </div>
 
     <div class="page__block">
@@ -12,7 +12,7 @@
     </div>
 
     <div class="page__block">
-      <p class="page__text">Список учителей, что бы посмотреть детали нажмите на имя учителя</p>
+      <p class="page__text">Список учителей, что бы посмотреть детали нажмите на имя</p>
 
       <!--  teachers list  -->
       <div class="page__list">
@@ -22,7 +22,7 @@
             v-for="child in children" :key="child.id"
             :to="`/timetable/children/${child.id}`"
         >{{ child.name }}</nuxt-link>
-        <p class="page__text--strong" v-if="!children.length" >Детей с таким именем нет</p>
+        <p class="not-found" v-if="!children.length" >Детей с таким именем нет</p>
       </div>
 
       <div class="page__details" v-if="childId">
