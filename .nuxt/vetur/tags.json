@@ -11,6 +11,9 @@
   "BaseModal": {
     "description": "Auto imported from components/base/BaseModal.vue"
   },
+  "BaseMultiTimeTable": {
+    "description": "Auto imported from components/base/BaseMultiTimeTable.vue"
+  },
   "BaseSelect": {
     "description": "Auto imported from components/base/BaseSelect.vue"
   },

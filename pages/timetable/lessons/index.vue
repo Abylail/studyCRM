@@ -1,15 +1,17 @@
 <template>
-  <div class="page lessons">
+  <div class="timetable page">
     <div class="page__head">
       <p class="page__title">Уроки</p>
-      <BaseButton>Добавить +</BaseButton>
+      <p>check</p>
+    </div>
+    <div class="page__main">
+
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "index"
 }
 </script>
 

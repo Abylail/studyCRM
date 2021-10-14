@@ -1,7 +1,7 @@
 <script>
 export default {
   middleware ({ redirect }) {
-    return redirect('/timetable/desc')
+    return redirect('/timetable/general')
   }
 }
 </script>

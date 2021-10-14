@@ -10,6 +10,7 @@ You can directly use them in pages and other components without the need to impo
 - `<BaseDevider>` | `<base-devider>` (components/base/BaseDevider.vue)
 - `<BaseIcon>` | `<base-icon>` (components/base/BaseIcon.vue)
 - `<BaseModal>` | `<base-modal>` (components/base/BaseModal.vue)
+- `<BaseMultiTimeTable>` | `<base-multi-time-table>` (components/base/BaseMultiTimeTable.vue)
 - `<BaseSelect>` | `<base-select>` (components/base/BaseSelect.vue)
 - `<BaseTextField>` | `<base-text-field>` (components/base/BaseTextField.vue)
 - `<BaseTimetable>` | `<base-timetable>` (components/base/BaseTimetable.vue)

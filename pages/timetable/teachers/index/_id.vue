@@ -26,7 +26,6 @@ export default {
   }),
   methods: {
     createHandle() {
-      console.log("create")
       this.$modal.show("create-lesson", { teacher_id: this.id });
     }
   },

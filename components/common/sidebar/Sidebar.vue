@@ -39,7 +39,7 @@ export default {
       {
         name: "Расписание", key: "timetable",
         list: [
-          { name: "Общее",            url: "/timetable/desc" },
+          { name: "Общее",            url: "/timetable/general" },
           { name: "Учителя",          url: "/timetable/teachers" },
           { name: "Дети",             url: "/timetable/children" },
           { name: "Классы",           url: "/timetable/classrooms" },
