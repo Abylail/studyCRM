@@ -16,12 +16,6 @@ export default {
     ]
   },
 
-  server: {
-    protocol: process.env.PROTOCOL,
-    host: process.env.HOST,
-    port: process.env.PORT
-  },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "~assets/style/index.scss",
