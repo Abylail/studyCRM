@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{322:function(t,e,n){"use strict";n.r(e);var c={},l=n(6),component=Object(l.a)(c,(function(){var t=this.$createElement;return(this._self._c||t)("div",{staticClass:"classrooms-details"})}),[],!1,null,"4232f72a",null);e.default=component.exports}}]);

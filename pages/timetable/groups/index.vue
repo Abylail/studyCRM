@@ -15,23 +15,9 @@
 
 
     <!-- FILTER -->
-    <div class="groups__filter">
-    <div class="page__head pointer min-height-35" @click="toggleFilter">
-      <p class="page__sub-title unselect">
-        Фильтр
-        <BaseIcon class="ic-16 transition rotate-90"
-                  :class="{'rotate-270': showFilter}"
-        >arrow</BaseIcon>
-      </p>
-      <span/>
-      <BaseButton v-show="haveFilters" @click.stop="clearFilter">Сбросить</BaseButton>
-    </div>
-
-    <Slide>
-      <div v-show="showFilter">
-
-        <div class="flex-row margin-top-10">
-          <BaseSelect
+    <DownOpener title="Фильтр">
+      <div class="flex-row margin-top-10">
+        <BaseSelect
             class="margin-right-10"
             title="Начало урока:"
             placeholder="Выберите время"
@@ -39,38 +25,45 @@
             nameSpace="start"
             v-model="timeStart"
             :options="times"
-          />
+        />
 
-          <BaseSelect
+        <BaseSelect
             title="Конец урока:"
             placeholder="Выберите время"
             keySpace="end"
             nameSpace="end"
             v-model="timeEnd"
             :options="times"
-          />
-        </div>
-
-        <div class="flex-row margin-top-10">
-          <BaseSelect
-              class="margin-right-10"
-              title="Учитель:"
-              placeholder="Выберите учителя"
-              v-model="teacher"
-              :options="teachers"
-          />
-
-          <BaseSelect
-              title="Аудитория:"
-              placeholder="Выберите аудиторию"
-              v-model="classroom"
-              :options="classrooms"
-          />
-        </div>
-
+        />
       </div>
-    </Slide>
-    </div>
+
+      <div class="flex-row margin-top-10">
+        <BaseSelect
+            class="margin-right-10"
+            title="Учитель:"
+            placeholder="Выберите учителя"
+            v-model="teacher"
+            :options="teachers"
+        />
+
+        <BaseSelect
+            title="Аудитория:"
+            placeholder="Выберите аудиторию"
+            v-model="classroom"
+            :options="classrooms"
+        />
+      </div>
+    </DownOpener>
+
+    <!-- INFO -->
+    <DownOpener title="Информация" v-if="details" openStart>
+      <div class="margin-top-10">
+      <div>Название: <span class="groups__info">{{ details.name }}</span></div>
+      <div>Учитель: <span class="groups__info">{{ details.teacher.name }}</span></div>
+      <div>Аудитория: <span class="groups__info">{{ details.classroom.name }}</span></div>
+      <div>Колличество детей: <span class="groups__info">{{ details.childrenCount }}</span></div>
+      </div>
+    </DownOpener>
 
     <!-- LIST -->
     <div class="page__list">
@@ -93,6 +86,7 @@ import { getTimes, formatTimeToMinutes } from "@/helpers/time";
 
 import GroupCard from "@/components/common/groups/GroupCard";
 import Slide from "@/components/transitions/Slide";
+import DownOpener from "../../../components/common/openers/DownOpener";
 
 export default {
   data: () => ({
@@ -106,8 +100,6 @@ export default {
     classroom: "",
 
 
-    showFilter: false,
-
     HIGHEST_TIME_DEFAULT: "9:00",
     LOWEST_TIME_DEFAULT: "22:00",
   }),
@@ -118,9 +110,6 @@ export default {
       this.timeEnd = "";
       this.teacher = "";
       this.classroom = "";
-    },
-    toggleFilter() {
-      this.showFilter = !this.showFilter;
     },
     isActive(group) {
       return this.groupId && group.id.toString() === this.groupId.toString();
@@ -178,17 +167,10 @@ export default {
     groupId() {
       return this.$route.params.id;
     },
-    // groups() {
-    //   let filteredList = list.slice();
-    //
-    //   if (this.searchName) filteredList = this.byName(filteredList);
-    //   if (this.timeStart) filteredList = this.byTimeStart(filteredList);
-    //   if (this.timeEnd) filteredList = this.byTimeEnd(filteredList);
-    //   if (this.teacher) filteredList = this.byTeacher(filteredList);
-    //   if (this.classroom) filteredList = this.byClassroom(filteredList);
-    //
-    //   return filteredList;
-    // },
+    details() {
+      if (!this.groupId) return null;
+      else return list.find(group => +group.id === +this.groupId);
+    },
     groups() {
       return list.filter(group => (
           this.byName(group) &&
@@ -199,7 +181,7 @@ export default {
       ))
     }
   },
-  components: { Slide, GroupCard }
+  components: {DownOpener, Slide, GroupCard }
 }
 </script>
 
@@ -211,6 +193,10 @@ export default {
     padding: 10px;
     background: $color_gray_light;
     border-radius: $border_radius;
+  }
+
+  &__info {
+    font-weight: bold;
   }
 }
 </style>
